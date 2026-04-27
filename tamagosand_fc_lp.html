@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>フランチャイズ募集 | タマゴサンド製作所</title>
+<meta name="description" content="タマゴサンド製作所のフランチャイズオーナー募集。イベント出店・無人販売・キッチンカーなど多様なスタイルで開業できます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --yolk: #F2B931;
+    --yolk-dark: #D49A10;
+    --yolk-light: #FFF3C4;
+    --cream: #FFFBF0;
+    --brown: #3D2B1F;
+    --brown-mid: #7A5C45;
+    --white: #FFFFFF;
+    --gray-light: #F5F2ED;
+    --gray-mid: #C8BFB5;
+    --text: #2E1F14;
+    --text-mid: #6B5040;
+    --accent: #E8650A;
+    --accent-light: #FFF0E6;
+    --green: #4A7C59;
+    --green-light: #EAF3EE;
+    --radius: 12px;
+    --radius-lg: 20px;
+    --shadow: 0 4px 24px rgba(61,43,31,0.10);
+    --shadow-sm: 0 2px 10px rgba(61,43,31,0.08);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  /* ── NAVIGATION ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(242,185,49,0.25);
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+  .nav-brand {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 14px;
+    color: var(--brown);
+    text-decoration: none;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav-brand .egg-icon {
+    width: 28px; height: 28px;
+    background: var(--yolk);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+  }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a {
+    font-size: 13px;
+    color: var(--brown-mid);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--yolk-dark); }
+  .nav-cta {
+    background: var(--yolk);
+    color: var(--brown);
+    border: none;
+    padding: 10px 22px;
+    border-radius: 40px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background .2s, transform .15s;
+    cursor: pointer;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+  .nav-cta:hover { background: var(--yolk-dark); transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(160deg, var(--yolk-light) 0%, var(--cream) 60%, #FFF8E6 100%);
+    min-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 5% 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 480px; height: 480px;
+    background: radial-gradient(circle, rgba(242,185,49,0.18) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -60px;
+    width: 360px; height: 360px;
+    background: radial-gradient(circle, rgba(232,101,10,0.10) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--yolk);
+    color: var(--brown);
+    padding: 6px 18px;
+    border-radius: 40px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: 28px;
+  }
+  .hero h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(32px, 5vw, 62px);
+    line-height: 1.35;
+    color: var(--brown);
+    margin-bottom: 24px;
+    font-weight: 700;
+    max-width: 800px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--accent);
+    position: relative;
+  }
+  .hero h1 em::after {
+    content: '';
+    position: absolute;
+    bottom: 2px; left: 0; right: 0;
+    height: 4px;
+    background: var(--yolk);
+    border-radius: 2px;
+    opacity: 0.6;
+  }
+  .hero-sub {
+    font-size: clamp(15px, 2vw, 18px);
+    color: var(--brown-mid);
+    max-width: 560px;
+    margin-bottom: 40px;
+    line-height: 1.8;
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--white);
+    border: none;
+    padding: 16px 36px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background .2s, transform .15s, box-shadow .2s;
+    box-shadow: 0 4px 20px rgba(232,101,10,0.30);
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+  .btn-primary:hover { background: #c5540a; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(232,101,10,0.38); }
+  .btn-secondary {
+    background: var(--white);
+    color: var(--brown);
+    border: 1.5px solid var(--gray-mid);
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: border-color .2s, transform .15s;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+  .btn-secondary:hover { border-color: var(--yolk-dark); transform: translateY(-1px); }
+
+  .hero-scroll {
+    margin-top: 52px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: var(--brown-mid);
+    font-size: 12px;
+  }
+  .hero-scroll .arrow {
+    width: 20px; height: 20px;
+    border-right: 2px solid var(--gray-mid);
+    border-bottom: 2px solid var(--gray-mid);
+    transform: rotate(45deg);
+    animation: bounce 1.6s infinite;
+  }
+  @keyframes bounce { 0%,100%{transform:translateY(0)rotate(45deg)} 50%{transform:translateY(5px)rotate(45deg)} }
+
+  /* ── SECTION BASE ── */
+  section { padding: 80px 5%; }
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+  .section-label::before {
+    content: '';
+    width: 20px; height: 2px;
+    background: var(--yolk);
+    border-radius: 1px;
+  }
+  .section-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(24px, 3.5vw, 38px);
+    color: var(--brown);
+    line-height: 1.4;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  .section-sub {
+    color: var(--text-mid);
+    font-size: 16px;
+    max-width: 560px;
+    line-height: 1.8;
+    margin-bottom: 48px;
+  }
+  .center { text-align: center; }
+  .center .section-sub { margin-left: auto; margin-right: auto; }
+
+  /* ── NUMBERS ── */
+  .numbers-bg {
+    background: var(--brown);
+    color: var(--white);
+    padding: 64px 5%;
+  }
+  .numbers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .num-card {
+    text-align: center;
+    padding: 36px 20px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+  }
+  .num-card:last-child { border-right: none; }
+  .num-big {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 700;
+    color: var(--yolk);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .num-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+  }
+  .num-note {
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    margin-top: 4px;
+  }
+
+  /* ── FC MODELS ── */
+  .models-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .model-card {
+    background: var(--white);
+    border: 1.5px solid var(--gray-light);
+    border-radius: var(--radius-lg);
+    padding: 36px 30px;
+    position: relative;
+    transition: transform .25s, box-shadow .25s;
+  }
+  .model-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .model-card.featured {
+    border-color: var(--yolk);
+    background: linear-gradient(160deg, var(--yolk-light) 0%, var(--white) 60%);
+  }
+  .featured-badge {
+    position: absolute;
+    top: -14px; left: 50%;
+    transform: translateX(-50%);
+    background: var(--yolk);
+    color: var(--brown);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 16px;
+    border-radius: 20px;
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+  }
+  .model-icon {
+    width: 56px; height: 56px;
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+  .model-icon.yellow { background: var(--yolk-light); }
+  .model-icon.orange { background: var(--accent-light); }
+  .model-icon.green  { background: var(--green-light); }
+  .model-card h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 20px;
+    color: var(--brown);
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+  .model-type {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    margin-bottom: 14px;
+  }
+  .model-desc {
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.75;
+    margin-bottom: 20px;
+  }
+  .model-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: var(--gray-light);
+    color: var(--brown-mid);
+    font-weight: 500;
+  }
+  .tag.accent-tag { background: var(--accent-light); color: var(--accent); }
+
+  /* ── MERITS ── */
+  .merits-bg { background: var(--gray-light); }
+  .merits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .merit-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    box-shadow: var(--shadow-sm);
+  }
+  .merit-num {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 13px;
+    color: var(--yolk-dark);
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+  }
+  .merit-card h4 {
+    font-size: 16px;
+    color: var(--brown);
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  .merit-card p { font-size: 14px; color: var(--text-mid); line-height: 1.75; }
+
+  /* ── SUPPORT ── */
+  .support-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .support-row {
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    gap: 20px 24px;
+    align-items: start;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--gray-light);
+  }
+  .support-row:last-child { border-bottom: none; }
+  .support-step {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: var(--yolk-light);
+    border: 2px solid var(--yolk);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--yolk-dark);
+  }
+  .support-content h4 {
+    font-size: 17px;
+    color: var(--brown);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .support-content p { font-size: 14px; color: var(--text-mid); line-height: 1.8; }
+
+  /* ── COST ── */
+  .cost-bg { background: var(--cream); }
+  .cost-table-wrap {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .cost-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+  }
+  .cost-table thead { background: var(--brown); }
+  .cost-table thead th {
+    padding: 16px 24px;
+    color: var(--white);
+    text-align: left;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+  }
+  .cost-table tbody tr:nth-child(even) { background: var(--gray-light); }
+  .cost-table tbody td {
+    padding: 14px 24px;
+    color: var(--text);
+    border-bottom: 1px solid var(--gray-light);
+    vertical-align: middle;
+  }
+  .cost-table tbody td:last-child { font-weight: 700; color: var(--brown); }
+  .cost-note {
+    max-width: 800px;
+    margin: 20px auto 0;
+    font-size: 13px;
+    color: var(--text-mid);
+    text-align: center;
+    line-height: 1.7;
+  }
+
+  /* ── FLOW ── */
+  .flow-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .flow-steps::before {
+    content: '';
+    position: absolute;
+    left: 26px;
+    top: 52px;
+    bottom: 52px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--yolk), var(--accent));
+  }
+  .flow-item {
+    display: grid;
+    grid-template-columns: 54px 1fr;
+    gap: 0 20px;
+    align-items: start;
+    padding: 16px 0;
+  }
+  .flow-circle {
+    width: 54px; height: 54px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 3px solid var(--yolk);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--yolk-dark);
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+  }
+  .flow-text { padding: 12px 0; }
+  .flow-text h4 { font-size: 16px; font-weight: 700; color: var(--brown); margin-bottom: 4px; }
+  .flow-text p { font-size: 14px; color: var(--text-mid); line-height: 1.7; }
+
+  /* ── FAQ ── */
+  .faq-bg { background: var(--gray-light); }
+  .faq-list {
+    max-width: 780px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .faq-item {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  .faq-q {
+    padding: 20px 24px;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--brown);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    user-select: none;
+  }
+  .faq-q::after {
+    content: '＋';
+    font-size: 18px;
+    color: var(--yolk-dark);
+    flex-shrink: 0;
+    transition: transform .3s;
+  }
+  .faq-item.open .faq-q::after { transform: rotate(45deg); }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .35s ease;
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.8;
+  }
+  .faq-item.open .faq-a { max-height: 300px; }
+  .faq-a-inner { padding: 0 24px 20px; }
+
+  /* ── FORM ── */
+  .form-section { background: linear-gradient(160deg, var(--cream) 0%, var(--yolk-light) 100%); }
+  .form-wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 48px 44px;
+    box-shadow: var(--shadow);
+  }
+  .form-group { margin-bottom: 22px; }
+  .form-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--brown);
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+  }
+  .form-label .req {
+    color: var(--accent);
+    font-size: 11px;
+    margin-left: 4px;
+  }
+  .form-input, .form-select, .form-textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid var(--gray-mid);
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    outline: none;
+    transition: border-color .2s, box-shadow .2s;
+  }
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    border-color: var(--yolk);
+    box-shadow: 0 0 0 3px rgba(242,185,49,0.15);
+  }
+  .form-textarea { min-height: 120px; resize: vertical; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-submit {
+    width: 100%;
+    padding: 18px;
+    background: var(--accent);
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Noto Sans JP', sans-serif;
+    transition: background .2s, transform .15s, box-shadow .2s;
+    box-shadow: 0 4px 20px rgba(232,101,10,0.28);
+    margin-top: 8px;
+  }
+  .form-submit:hover { background: #c5540a; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(232,101,10,0.36); }
+  .form-note { text-align: center; font-size: 12px; color: var(--text-mid); margin-top: 14px; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--brown);
+    color: rgba(255,255,255,0.65);
+    padding: 48px 5%;
+    text-align: center;
+    font-size: 13px;
+  }
+  .footer-logo {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 18px;
+    color: var(--yolk);
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    list-style: none;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  .footer-links a {
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color .2s;
+  }
+  .footer-links a:hover { color: var(--yolk); }
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav .nav-links { display: none; }
+    .form-wrap { padding: 32px 24px; }
+    .form-row { grid-template-columns: 1fr; }
+    .support-row { grid-template-columns: 54px 1fr; }
+    .cost-table thead th, .cost-table tbody td { padding: 12px 14px; font-size: 13px; }
+    .flow-steps::before { left: 25px; }
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="https://tamagosand.shop/" class="nav-brand">
+    <div class="egg-icon">🥚</div>
+    タマゴサンド製作所
+  </a>
+  <ul class="nav-links">
+    <li><a href="#models">FCモデル</a></li>
+    <li><a href="#merits">オーナーの声</a></li>
+    <li><a href="#cost">費用・収益</a></li>
+    <li><a href="#flow">開業の流れ</a></li>
+    <li><a href="#faq">よくある質問</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">無料相談する</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">🎉 フランチャイズオーナー募集中</div>
+  <h1>
+    <em>タマゴサンド</em>で、<br>
+    あなたの夢を形に。
+  </h1>
+  <p class="hero-sub">
+    2021年兵庫・太子町から生まれた<strong>タマゴサンド製作所</strong>が、<br>
+    いよいよ全国へ。イベント出店・無人販売・キッチンカーなど<br>
+    あなたのライフスタイルに合わせた多彩なスタイルで開業できます。
+  </p>
+  <div class="hero-ctas">
+    <a href="#contact" class="btn-primary">今すぐ無料相談する</a>
+    <a href="#models" class="btn-secondary">FCモデルを見る</a>
+  </div>
+  <div class="hero-scroll">
+    <div class="arrow"></div>
+    <span>スクロールして詳しく見る</span>
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<div class="numbers-bg">
+  <div class="numbers-grid">
+    <div class="num-card">
+      <div class="num-big">2021</div>
+      <div class="num-label">年創業</div>
+      <div class="num-note">兵庫・太子町発</div>
+    </div>
+    <div class="num-card">
+      <div class="num-big">10+</div>
+      <div class="num-label">商品ラインナップ</div>
+      <div class="num-note">季節限定含む</div>
+    </div>
+    <div class="num-card">
+      <div class="num-big">350円〜</div>
+      <div class="num-label">商品価格</div>
+      <div class="num-note">手が届きやすい価格帯</div>
+    </div>
+    <div class="num-card">
+      <div class="num-big">全国</div>
+      <div class="num-label">展開可能エリア</div>
+      <div class="num-note">イベント・商業施設等</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONCEPT -->
+<section style="padding:80px 5%; max-width:1100px; margin:0 auto;">
+  <div class="section-label reveal">ブランドについて</div>
+  <h2 class="section-title reveal">「たまごを口いっぱいに頬張りたい」<br>その想いが全国へ。</h2>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; margin-top:0;" class="reveal">
+    <div>
+      <p style="color:var(--text-mid); line-height:1.9; font-size:15px; margin-bottom:20px;">
+        タマゴサンド製作所は、すべて手作り・新鮮卵をたっぷり使った
+        こだわりのタマゴサンドを届けるブランドです。
+        2021年の無人販売スタートから、地域に愛され続けてきました。
+      </p>
+      <p style="color:var(--text-mid); line-height:1.9; font-size:15px; margin-bottom:24px;">
+        シンプルで誰もが笑顔になれる商品だからこそ、
+        どんな立地・スタイルでも愛されます。
+        FCオーナーとして、その笑顔を広げる仲間になりませんか？
+      </p>
+      <div style="display:flex; gap:24px; flex-wrap:wrap;">
+        <div style="text-align:center;">
+          <div style="font-size:32px; margin-bottom:4px;">🥚</div>
+          <div style="font-size:12px; color:var(--brown-mid); font-weight:700;">新鮮卵使用</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:32px; margin-bottom:4px;">✋</div>
+          <div style="font-size:12px; color:var(--brown-mid); font-weight:700;">すべて手作り</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:32px; margin-bottom:4px;">😊</div>
+          <div style="font-size:12px; color:var(--brown-mid); font-weight:700;">みんなが笑顔に</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--yolk-light); border-radius:var(--radius-lg); padding:40px 32px; text-align:center;">
+      <div style="font-size:72px; margin-bottom:16px;">🥪</div>
+      <div style="font-family:'Noto Serif JP',serif; font-size:18px; color:var(--brown); font-weight:700; margin-bottom:8px;">
+        タマゴサンド 350円〜
+      </div>
+      <div style="font-size:13px; color:var(--text-mid);">
+        シンプルだからこそ奥深い、<br>手が届く価格のこだわりサンド
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FC MODELS -->
+<section id="models" style="background:var(--gray-light); padding:80px 5%;">
+  <div class="center">
+    <div class="section-label reveal">フランチャイズモデル</div>
+    <h2 class="section-title reveal">3つのスタイルから選べる</h2>
+    <p class="section-sub reveal">あなたの状況・目標に合わせて最適なモデルを選択。<br>初期投資を抑えながらスタートできます。</p>
+  </div>
+  <div class="models-grid">
+    <div class="model-card featured reveal">
+      <div class="featured-badge">★ 人気No.1</div>
+      <div class="model-icon yellow">🎪</div>
+      <div class="model-type">EVENT TYPE</div>
+      <h3>イベント出店型</h3>
+      <p class="model-desc">マルシェ・フェス・地域イベントへの出店が中心のモデル。週末だけの副業スタートも可能。人が集まる場所で高回転・高単価を実現。</p>
+      <div class="model-tags">
+        <span class="tag accent-tag">週末副業OK</span>
+        <span class="tag">初期費用低め</span>
+        <span class="tag">本部が出店先を紹介</span>
+      </div>
+    </div>
+    <div class="model-card reveal">
+      <div class="model-icon green">🏪</div>
+      <div class="model-type">UNMANNED TYPE</div>
+      <h3>無人販売型</h3>
+      <p class="model-desc">本部のノウハウをそのまま活用。冷蔵ショーケースと販売ボックスを設置するだけ。労働時間を最小化しながら安定収益を目指せます。</p>
+      <div class="model-tags">
+        <span class="tag">24時間販売</span>
+        <span class="tag">省人化</span>
+        <span class="tag">地域密着型</span>
+      </div>
+    </div>
+    <div class="model-card reveal">
+      <div class="model-icon orange">🚐</div>
+      <div class="model-type">MOBILE TYPE</div>
+      <h3>キッチンカー型</h3>
+      <p class="model-desc">移動販売でエリアを問わず出店できる最も機動力の高いモデル。商業施設・オフィス街・住宅地など幅広いロケーションで展開可能。</p>
+      <div class="model-tags">
+        <span class="tag">エリア自由</span>
+        <span class="tag">高収益ポテンシャル</span>
+        <span class="tag">ブランド認知向上</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MERITS -->
+<section id="merits" style="padding:80px 5%;">
+  <div class="center">
+    <div class="section-label reveal">FCオーナーのメリット</div>
+    <h2 class="section-title reveal">選ばれる6つの理由</h2>
+    <p class="section-sub reveal">タマゴサンド製作所FCを選ぶオーナーが増えています。</p>
+  </div>
+  <div class="merits-grid">
+    <div class="merit-card reveal">
+      <div class="merit-num">MERIT 01</div>
+      <h4>🏷 参入障壁の低い価格帯</h4>
+      <p>350円〜という手頃な価格で幅広い客層に訴求。単価が低くても回転が速く、フェス・マルシェでの1日販売でも高売上を狙えます。</p>
+    </div>
+    <div class="merit-card reveal">
+      <div class="merit-num">MERIT 02</div>
+      <h4>📋 本部によるレシピ・製造サポート</h4>
+      <p>手作りへのこだわりを守りながら、標準化されたレシピと製造マニュアルを提供。飲食未経験者でも安心してスタートできます。</p>
+    </div>
+    <div class="merit-card reveal">
+      <div class="merit-num">MERIT 03</div>
+      <h4>📍 出店先のネットワーク共有</h4>
+      <p>本部が持つイベント・マルシェ・商業施設とのネットワークをFC加盟者にも共有。出店場所探しの手間を大幅に削減します。</p>
+    </div>
+    <div class="merit-card reveal">
+      <div class="merit-num">MERIT 04</div>
+      <h4>📱 SNS・マーケティング支援</h4>
+      <p>Instagramを中心とした公式SNSの運用ノウハウを共有。ブランドの認知度を活かしながら個店の集客も強化できます。</p>
+    </div>
+    <div class="merit-card reveal">
+      <div class="merit-num">MERIT 05</div>
+      <h4>🛒 食材・資材の一括仕入れ</h4>
+      <p>本部による一括仕入れで食材・資材コストを抑制。個人で動くよりも有利なコスト構造でビジネスを展開できます。</p>
+    </div>
+    <div class="merit-card reveal">
+      <div class="merit-num">MERIT 06</div>
+      <h4>🤝 共同管理による運営サポート</h4>
+      <p>「任せながら一緒に育てる」をコンセプトに、経営・運営の壁を本部と一緒に乗り越えます。孤独な起業ではなくチームで成長。</p>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPORT -->
+<section style="background:var(--cream); padding:80px 5%;">
+  <div class="center">
+    <div class="section-label reveal">サポート体制</div>
+    <h2 class="section-title reveal">開業後も寄り添う<br>充実のバックアップ</h2>
+    <p class="section-sub reveal">初めての方でも安心して進められるよう、開業前〜開業後まで丁寧にサポートします。</p>
+  </div>
+  <div class="support-wrap">
+    <div class="support-row reveal">
+      <div class="support-step">①</div>
+      <div class="support-content">
+        <h4>事前研修・製造トレーニング</h4>
+        <p>タマゴサンドの製造から品質管理まで、現地またはオンラインで丁寧に研修。飲食未経験でも安心してスタートできます。</p>
+      </div>
+    </div>
+    <div class="support-row reveal">
+      <div class="support-step">②</div>
+      <div class="support-content">
+        <h4>出店計画・立地アドバイス</h4>
+        <p>選んだFCモデルに合わせた出店先の選定、商圏分析、イベント情報のご案内。本部ネットワークを最大限活用します。</p>
+      </div>
+    </div>
+    <div class="support-row reveal">
+      <div class="support-step">③</div>
+      <div class="support-content">
+        <h4>集客・SNSマーケティング支援</h4>
+        <p>ブランドのInstagram・LINE公式を活用した集客施策をご提案。開業チラシや告知素材の制作サポートも行います。</p>
+      </div>
+    </div>
+    <div class="support-row reveal">
+      <div class="support-step">④</div>
+      <div class="support-content">
+        <h4>定期ミーティング・経営相談</h4>
+        <p>月次での売上報告・振り返りミーティングを実施。課題を早期に把握し、改善策を一緒に考えます。</p>
+      </div>
+    </div>
+    <div class="support-row reveal">
+      <div class="support-step">⑤</div>
+      <div class="support-content">
+        <h4>新商品・季節メニューの展開</h4>
+        <p>本部で開発した新商品・限定商品を随時FCに展開。飽きられない商品構成でリピーターを獲得し続けます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COST -->
+<section id="cost" class="cost-bg" style="padding:80px 5%;">
+  <div class="center">
+    <div class="section-label reveal">費用・収益モデル</div>
+    <h2 class="section-title reveal">透明なコスト体系</h2>
+    <p class="section-sub reveal">初期投資・月次コストをわかりやすく公開しています。<br>詳細は個別相談にて確認できます。</p>
+  </div>
+  <div class="cost-table-wrap reveal">
+    <table class="cost-table">
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th>内容</th>
+          <th>目安金額</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>加盟金</td>
+          <td>ブランド・ノウハウ使用料（一回限り）</td>
+          <td>要相談</td>
+        </tr>
+        <tr>
+          <td>初期研修費</td>
+          <td>製造トレーニング・マニュアル提供</td>
+          <td>要相談</td>
+        </tr>
+        <tr>
+          <td>備品・設備費</td>
+          <td>什器・冷蔵機器・販売用資材など</td>
+          <td>要相談</td>
+        </tr>
+        <tr>
+          <td>月次ロイヤリティ</td>
+          <td>売上に対する一定割合（詳細は面談にて）</td>
+          <td>要相談</td>
+        </tr>
+        <tr>
+          <td>食材・資材費</td>
+          <td>本部一括仕入れによるコスト削減</td>
+          <td>仕入原価による</td>
+        </tr>
+        <tr>
+          <td>月次サポート費</td>
+          <td>マーケティング・経営サポート込み</td>
+          <td>要相談</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cost-note reveal">
+    ※ 金額はモデル・エリア・規模によって異なります。まずは無料個別相談にてご確認ください。<br>
+    ※ 副業スタートで小規模から始め、段階的に拡大するプランも相談可能です。
+  </p>
+</section>
+
+<!-- FLOW -->
+<section id="flow" style="padding:80px 5%;">
+  <div class="center">
+    <div class="section-label reveal">開業の流れ</div>
+    <h2 class="section-title reveal">無料相談から開業まで</h2>
+    <p class="section-sub reveal" style="margin-bottom:52px;">最短で開業できるよう、ステップを明確にしています。</p>
+  </div>
+  <div class="flow-steps">
+    <div class="flow-item reveal">
+      <div class="flow-circle">1</div>
+      <div class="flow-text">
+        <h4>無料個別相談（オンライン可）</h4>
+        <p>まずはお気軽にご相談ください。希望のFCモデルや開業イメージをヒヤリングします。Zoom・対面どちらでも対応。</p>
+      </div>
+    </div>
+    <div class="flow-item reveal">
+      <div class="flow-circle">2</div>
+      <div class="flow-text">
+        <h4>詳細説明会・資料送付</h4>
+        <p>費用・収益シミュレーション・サポート内容の詳細資料をご提供。疑問点はすべてこの段階で解消できます。</p>
+      </div>
+    </div>
+    <div class="flow-item reveal">
+      <div class="flow-circle">3</div>
+      <div class="flow-text">
+        <h4>加盟申込・審査</h4>
+        <p>ご加盟意向をいただいた後、簡単な審査を経て正式契約へ進みます。</p>
+      </div>
+    </div>
+    <div class="flow-item reveal">
+      <div class="flow-circle">4</div>
+      <div class="flow-text">
+        <h4>研修・準備期間</h4>
+        <p>製造研修・設備準備・出店先の選定を並行して進めます。本部が丁寧にサポートします。</p>
+      </div>
+    </div>
+    <div class="flow-item reveal">
+      <div class="flow-circle">5</div>
+      <div class="flow-text">
+        <h4>グランドオープン🎉</h4>
+        <p>準備完了後、いよいよオープン！開業後も定期的なフォローで安心してスタートを切れます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq-bg" style="padding:80px 5%;">
+  <div class="center">
+    <div class="section-label reveal">よくある質問</div>
+    <h2 class="section-title reveal">気になることへお答えします</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item reveal">
+      <div class="faq-q">飲食業経験がなくても大丈夫ですか？</div>
+      <div class="faq-a"><div class="faq-a-inner">はい、まったく問題ありません。製造マニュアルと研修プログラムを用意しており、飲食未経験の方でも安心してスタートできます。実際に、異業種からの転業・副業スタートのオーナーも多数います。</div></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q">副業・週末だけでも始められますか？</div>
+      <div class="faq-a"><div class="faq-a-inner">イベント出店型であれば、週末を中心とした副業スタートが可能です。まずは月数回のイベント出店から始め、軌道に乗ったら規模を拡大するオーナーも多くいます。お仕事の状況に合わせて柔軟にプランを組みます。</div></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q">どのくらいの初期費用が必要ですか？</div>
+      <div class="faq-a"><div class="faq-a-inner">FCモデルや規模によって異なります。イベント出店型であれば比較的少額からスタート可能です。具体的な金額は個別相談の際に詳しくご説明します。副業・小規模スタートのプランもご用意しています。</div></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q">出店先はどうやって探しますか？</div>
+      <div class="faq-a"><div class="faq-a-inner">本部のネットワークを活用して、イベント・マルシェ・商業施設への出店情報を共有します。自分で開拓することも可能で、本部がサポートします。イベント出店先の紹介は加盟オーナーへの主要なサポートの一つです。</div></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q">複数エリア・複数店舗での展開は可能ですか？</div>
+      <div class="faq-a"><div class="faq-a-inner">可能です。1店舗で実績を積んだ後、エリア拡大・多店舗展開を希望するオーナーには、優先的に情報提供・サポートを行います。将来のエリアオーナー制度についても個別相談で詳しくご説明します。</div></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q">法人でも個人事業主でも申込できますか？</div>
+      <div class="faq-a"><div class="faq-a-inner">はい、どちらも歓迎しています。BtoB展開（法人向け）のご相談も承っています。まずはお気軽にお問い合わせください。</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section id="contact" class="form-section" style="padding:80px 5%;">
+  <div class="center">
+    <div class="section-label reveal">お問い合わせ</div>
+    <h2 class="section-title reveal">まずは無料相談から</h2>
+    <p class="section-sub reveal" style="margin-bottom:40px;">費用・モデル・スケジュールなど、どんな小さな疑問でも大歓迎です。<br>お気軽にご連絡ください。</p>
+  </div>
+  <div class="form-wrap reveal">
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">お名前 <span class="req">必須</span></label>
+        <input type="text" class="form-input" placeholder="山田 太郎">
+      </div>
+      <div class="form-group">
+        <label class="form-label">会社名・屋号</label>
+        <input type="text" class="form-input" placeholder="株式会社〇〇 / 個人事業">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">メールアドレス <span class="req">必須</span></label>
+        <input type="email" class="form-input" placeholder="example@email.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label">電話番号</label>
+        <input type="tel" class="form-input" placeholder="090-0000-0000">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">興味のあるFCモデル <span class="req">必須</span></label>
+      <select class="form-select">
+        <option value="">選択してください</option>
+        <option>イベント出店型</option>
+        <option>無人販売型</option>
+        <option>キッチンカー型</option>
+        <option>まだ決まっていない</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-label">ご開業の予定時期</label>
+      <select class="form-select">
+        <option value="">選択してください</option>
+        <option>できるだけ早く（3ヶ月以内）</option>
+        <option>半年以内</option>
+        <option>1年以内</option>
+        <option>まだ検討段階</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-label">ご質問・ご要望など</label>
+      <textarea class="form-textarea" placeholder="現状や気になること、ご質問などをご自由にお書きください。"></textarea>
+    </div>
+    <button class="form-submit" onclick="handleSubmit(this)">無料相談を申し込む →</button>
+    <p class="form-note">
+      ※ 送信後、担当者より2営業日以内にご連絡いたします。<br>
+      ※ 個人情報は本目的以外には使用しません。
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">🥚 タマゴサンド製作所</div>
+  <ul class="footer-links">
+    <li><a href="https://tamagosand.shop/">公式サイト</a></li>
+    <li><a href="https://tamagosand.shop/about.html">店舗紹介</a></li>
+    <li><a href="https://tamagosand.shop/item.html">商品紹介</a></li>
+    <li><a href="https://www.instagram.com/tamagosando_seisakusho/">Instagram</a></li>
+    <li><a href="https://ponkotsushoten.stores.jp/">WEB販売</a></li>
+  </ul>
+  <p class="footer-copy">© 2024 タマゴサンド製作所 All Rights Reserved.</p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 60);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => io.observe(el));
+
+  // FAQ toggle
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // Form submit
+  function handleSubmit(btn) {
+    btn.textContent = '✓ 送信しました！担当者からご連絡します';
+    btn.style.background = 'var(--green)';
+    btn.disabled = true;
+  }
+</script>
+</body>
+</html>
